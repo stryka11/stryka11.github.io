@@ -4,6 +4,8 @@ import { updatePin } from './StartActions'
 import logo from './images/logo.svg';
 import './css/Start.css';
 import InputNumeric from '../Common/Components/InputNumeric/InputNumeric'
+import animate__animated from 'animate.css'
+
 
 class StartModule extends React.Component {
 
@@ -24,6 +26,10 @@ class StartModule extends React.Component {
             <div className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
+
+    <div class="animate__animated animate__fadeInLeft">
+        hello world
+    </div>
 
                 <InputNumeric id="0" handleChange={this.handleUserInput} />
                 <InputNumeric id="1" handleChange={this.handleUserInput} />
