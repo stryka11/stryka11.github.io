@@ -4,12 +4,12 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 
-import App from './App'
+import StartApp from './Modules/Start/StartModule.js'
 
 const rootElement = document.getElementById('root')
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <StartApp />
   </Provider>,
   rootElement
 )
