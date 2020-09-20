@@ -4,7 +4,7 @@ import { updatePin } from './StartActions'
 import logo from './images/logo.svg';
 import './css/Start.css';
 import InputNumeric from '../Common/Components/InputNumeric/InputNumeric'
-import animate__animated from 'animate.css'
+import { useWindupString } from "windups";
 
 
 class StartModule extends React.Component {
@@ -27,9 +27,8 @@ class StartModule extends React.Component {
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
 
-    <div class="animate__animated animate__fadeInLeft">
-        hello world
-    </div>
+
+                <StringyWindup />
 
                 <InputNumeric id="0" handleChange={this.handleUserInput} />
                 <InputNumeric id="1" handleChange={this.handleUserInput} />
@@ -45,6 +44,12 @@ class StartModule extends React.Component {
 
     )}
 }
+
+// Make a new component
+const StringyWindup = () => {
+  const [text] = useWindupString("Hello world!");
+  return <div>{text}</div>;
+};
 
 const mapStateToProps = state => {
   return {
