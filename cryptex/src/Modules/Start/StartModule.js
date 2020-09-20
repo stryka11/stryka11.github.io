@@ -30,13 +30,23 @@ class StartModule extends React.Component {
                 <InputNumeric id="2" handleChange={this.handleUserInput} />
                 <InputNumeric id="3" handleChange={this.handleUserInput} />
 
+                <button type="button" style={{display: this.props.isSolved ? 'block' : 'none' }}
+                    >Click Me!
+                </button>
+
               </header>
             </div>
 
     )}
 }
 
+const mapStateToProps = state => {
+  return {
+    isSolved: state.solved
+  }
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   null,
 )(StartModule)
