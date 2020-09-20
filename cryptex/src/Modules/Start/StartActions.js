@@ -1,9 +1,9 @@
 import { UPDATE_PIN } from './StartActionTypes'
 
-export const updatePin = (content, index) => ({
+export const updatePin = (index, value) => ({
   type: UPDATE_PIN,
   payload: {
     index,
-    content
+    value
   }
 })

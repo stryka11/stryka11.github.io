@@ -16,9 +16,7 @@ class StartModule extends React.Component {
     handleUserInput(e) {
         const id = e.target.id
         const value = e.target.value
-        const payload = "hello"
-        console.log("hello")
-        this.props.dispatch(updatePin(payload))
+        this.props.dispatch(updatePin(id, value))
     }
 
     render() {
@@ -27,10 +25,10 @@ class StartModule extends React.Component {
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
 
+                <InputNumeric id="0" handleChange={this.handleUserInput} />
                 <InputNumeric id="1" handleChange={this.handleUserInput} />
                 <InputNumeric id="2" handleChange={this.handleUserInput} />
                 <InputNumeric id="3" handleChange={this.handleUserInput} />
-                <InputNumeric id="4" handleChange={this.handleUserInput} />
 
               </header>
             </div>
