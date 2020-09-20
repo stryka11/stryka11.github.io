@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { updatePin } from './StartActions'
+import logo from './images/logo.svg';
+import './css/Start.css';
 
 class StartModule extends React.Component {
 
@@ -19,18 +21,25 @@ class StartModule extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+
                 <input
                    onChange={e => this.updateInput(e.target.value)}
                    value={this.state.input}
                 />
 
+                <br></br>
+
                 <button className="pin" onClick={this.handleUpdatePin}>
                  Submit
                 </button>
-            </div>
-    )}
 
+              </header>
+            </div>
+
+    )}
 }
 
 export default connect(
