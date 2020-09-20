@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { updatePin } from './StartActions'
 import logo from './images/logo.svg';
 import './css/Start.css';
+import InputNumeric from '../Common/Components/InputNumeric/InputNumeric'
 
 class StartModule extends React.Component {
 
@@ -24,6 +25,11 @@ class StartModule extends React.Component {
             <div className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
+
+                <InputNumeric id="1" handleChange={updatePin} />
+                <InputNumeric id="2" handleChange={updatePin} />
+                <InputNumeric id="3" handleChange={updatePin} />
+                <InputNumeric id="4" handleChange={updatePin} />
 
                 <input
                    onChange={e => this.updateInput(e.target.value)}
