@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { Provider } from 'react-redux'
-import store from './store'
+import store from "./Redux/Store"
 
 import StartApp from './Modules/Start/StartModule.js'
 

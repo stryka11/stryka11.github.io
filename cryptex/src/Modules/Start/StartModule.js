@@ -1,3 +1,4 @@
+import React from "react";
 import { connect } from 'react-redux'
 import { updatePin } from './StartActions'
 
@@ -17,7 +18,7 @@ class StartModule extends React.Component {
     }
 
     render() {
-        return
+        return (
             <div>
                 <input
                    onChange={e => this.updateInput(e.target.value)}
@@ -28,7 +29,7 @@ class StartModule extends React.Component {
                  Submit
                 </button>
             </div>
-    }
+    )}
 
 }
 
