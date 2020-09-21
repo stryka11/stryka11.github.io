@@ -4,7 +4,7 @@ import { updatePin } from './StartActions'
 import logo from './images/logo.svg';
 import './css/Start.css';
 import InputNumeric from '../Common/Components/InputNumeric/InputNumeric'
-import { useWindupString } from "windups";
+import { WindupChildren, Pause, Pace } from "windups";
 
 
 class StartModule extends React.Component {
@@ -27,8 +27,7 @@ class StartModule extends React.Component {
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
 
-
-                <StringyWindup />
+                <CrypticClue />
 
                 <InputNumeric id="0" handleChange={this.handleUserInput} />
                 <InputNumeric id="1" handleChange={this.handleUserInput} />
@@ -45,10 +44,38 @@ class StartModule extends React.Component {
     )}
 }
 
-// Make a new component
-const StringyWindup = () => {
-  const [text] = useWindupString("Hello world!");
-  return <div>{text}</div>;
+const CrypticClue = () => {
+  return (
+    <WindupChildren>
+        <div>
+             <Pace getPace={(char) => (char === " " ? 200 : 40)}>
+            {"My wonderful,"}
+                <span style={{ color: "pink" }}>{" gówno "}</span>
+            {"bae"}
+            <Pause ms={650}/>
+            </Pace>
+        </div>
+
+        <div>
+            <Pace getPace={(char) => (char === " " ? 200 : 40)}>
+            { "I think you're great" }
+            <Pause ms={1000}/>
+            </Pace>
+        </div>
+        <div>
+             <Pace getPace={(char) => (char === " " ? 200 : 40)}>
+            {"Here’s to more years ahead"}
+            <Pause ms={800}/>
+            </Pace>
+        </div>
+        <div>
+            <Pace getPace={(char) => (char === " " ? 200 : 40)}>
+            {"Forever and always"}
+            <Pause ms={1000}/>
+            </Pace>
+        </div>
+    </WindupChildren>
+  );
 };
 
 const mapStateToProps = state => {
