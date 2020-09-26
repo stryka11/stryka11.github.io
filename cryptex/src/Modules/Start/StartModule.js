@@ -22,7 +22,6 @@ class StartModule extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.handleUserInput = this.handleUserInput.bind(this)
     }
 
@@ -69,12 +68,6 @@ class StartModule extends React.Component {
 
                     <form className={this.classes.form} noValidate>
                       <Grid container spacing={2}>
-
-
-                    <CreateGridElements />
-
-
-
                         <Grid item xs={12} sm={3}>
                           <TextField
                             variant="outlined"
@@ -85,6 +78,7 @@ class StartModule extends React.Component {
                             autoFocus
                             type="number"
                             maxLength="1"
+                            onChange={this.handleUserInput}
                           />
                         </Grid>
                         <Grid item xs={12} sm={3}>
@@ -97,6 +91,7 @@ class StartModule extends React.Component {
                             autoFocus
                             type="number"
                             maxLength="1"
+                            onChange={this.handleUserInput}
                           />
                         </Grid>
                         <Grid item xs={12} sm={3}>
@@ -109,6 +104,7 @@ class StartModule extends React.Component {
                             autoFocus
                             type="number"
                             maxLength="1"
+                            onChange={this.handleUserInput}
                           />
                         </Grid>
                         <Grid item xs={12} sm={3}>
@@ -119,47 +115,27 @@ class StartModule extends React.Component {
                             id="3"
                             label="E"
                             maxLength="1"
+                            onChange={this.handleUserInput}
                           />
                         </Grid>
                       </Grid>
+                      <br />
                       <Button
-                        type="submit"
                         fullWidth
                         variant="contained"
                         color="primary"
+                        style={{display: this.props.isSolved ? 'block' : 'none' }}
                         className={this.classes.submit}
                       >
-                        Sign Up
+                        See the next clue
                       </Button>
                     </form>
                   </div>
                 </Container>
-
-                <InputNumeric id="0" handleChange={this.handleUserInput} />
-                <InputNumeric id="1" handleChange={this.handleUserInput} />
-                <InputNumeric id="2" handleChange={this.handleUserInput} />
-                <InputNumeric id="3" handleChange={this.handleUserInput} />
-
-                <button type="button" style={{display: this.props.isSolved ? 'block' : 'none' }}
-                    >Click Me!
-                </button>
-
               </header>
             </div>
-
     )}
 }
-
- const CreateGridElements = () => {
-  const elements = ['C', 'O', 'D', 'E'];
-  return (
-    <ul>
-      {elements.map((value, index) => {
-        return <li key={index}>{value}</li>
-      })}
-    </ul>
-  )
-  }
 
 const mapStateToProps = state => {
   return {
