@@ -59,9 +59,6 @@ class StartModule extends React.Component {
                 <Container component="main" maxWidth="xs">
                   <CssBaseline />
                   <div className={this.classes.paper} >
-                    <audio autoPlay loop>
-                        <source src={wiiMusic} type="audio/mp3" />
-                    </audio>
                     <Typography component="p"
                     className={this.props.isSolved ? '' : 'fadeIn'}
                     style={{display: this.props.isSolved ? 'none' : 'block'}}variant="h5">
@@ -159,6 +156,10 @@ class StartModule extends React.Component {
                 </Grid>
                 </div>
                 </div>
+                <br />
+                <audio autoPlay controls loop>
+                    <source src={wiiMusic} type="audio/mp3" />
+                </audio>
                 </Container>
                 </header>
                 </div>
