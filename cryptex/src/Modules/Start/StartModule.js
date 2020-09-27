@@ -3,14 +3,10 @@ import { connect } from 'react-redux'
 import { updatePin } from './StartActions'
 import logo from './images/logo.svg';
 import './css/Start.css';
-import InputNumeric from '../Common/Components/InputNumeric/InputNumeric'
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -58,7 +54,6 @@ class StartModule extends React.Component {
                 <Container component="main" maxWidth="xs">
                   <CssBaseline />
                   <div className={this.classes.paper}>
-
                     <Typography component="p" variant="h5">
                       <p>    My wonderful bae </p>
                       <p>    I think you are great </p>
@@ -90,7 +85,6 @@ class StartModule extends React.Component {
                             label="O"
                             autoFocus
                             type="number"
-                            maxLength="1"
                             onChange={this.handleUserInput}
                           />
                         </Grid>
@@ -129,6 +123,15 @@ class StartModule extends React.Component {
                       >
                         See the next clue
                       </Button>
+                    <Button
+                      fullWidth
+                      variant="contained"
+                      color="secondary"
+                      style={{display: this.props.isSolved ? 'none' : 'block' }}
+                      className={this.classes.submit}
+                    >
+                      Need a hint?
+                    </Button>
                     </form>
                   </div>
                 </Container>

@@ -15,7 +15,7 @@ function arrayEquals(a, b) {
 
 
 function rootReducer(state = initialState, action) {
-    if (action.type == UPDATE_PIN) {
+    if (action.type === UPDATE_PIN) {
 
         const index = action.payload.index
         const value = action.payload.value
