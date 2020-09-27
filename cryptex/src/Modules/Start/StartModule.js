@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux'
-import { updatePin } from './StartActions'
+import { showNextClue, updatePin } from './StartActions'
 import logo from './images/logo.svg';
 import './css/Start.css';
 import Button from '@material-ui/core/Button';
@@ -14,18 +14,25 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import SimplePopover from './SimplePopover'
+import { NEXT_CLUE } from './StartActionTypes'
+
 
 class StartModule extends React.Component {
 
     constructor(props) {
         super(props);
         this.handleUserInput = this.handleUserInput.bind(this)
+        this.showNextClue = this.showNextClue.bind(this)
     }
 
     handleUserInput(e) {
         const id = e.target.id
         const value = e.target.value
         this.props.dispatch(updatePin(id, value))
+    }
+
+    showNextClue() {
+        this.props.dispatch(showNextClue())
     }
 
     classes = makeStyles((theme) => ({
@@ -60,8 +67,8 @@ class StartModule extends React.Component {
                     className={this.props.isSolved ? '' : 'fadeIn'}
                     style={{display: this.props.isSolved ? 'none' : 'block'}}variant="h5">
                       <p>    My wonderful bae </p>
-                      <p>    I appreciate you </p>
-                      <p>    Here is to more years ahead </p>
+                      <p>    I really do appreciate you </p>
+                      <p>    Here's to more years ahead </p>
                       <p>    Forever and always </p>
                     </Typography>
 
@@ -129,6 +136,7 @@ class StartModule extends React.Component {
                         color="primary"
                         style={{display: this.props.isSolved ? 'block' : 'none' }}
                         className={this.classes.submit}
+                        onClick={this.showNextClue}
                       >
                         See the next clue
                       </Button>
@@ -137,17 +145,31 @@ class StartModule extends React.Component {
                     </div>
                     </form>
 
-                  </div>
+                    <br />
+                    <div style={{display: this.props.showNextClue ? 'block' : 'none' }}>
+                       <Grid item xs={12} sm={12}>
+                          <TextField
+                              label="Next clue"
+                              multiline
+                              rowsMax={10}
+                              value={this.props.nextClue}
+                              variant="filled"
+                        />
+                </Grid>
+                </div>
+                </div>
                 </Container>
-              </header>
-            </div>
-    )}
-}
+                </header>
+                </div>
+                        )}
+                }
 
 const mapStateToProps = state => {
   return {
     isSolved: state.solved,
-    secret: state.secret
+    secret: state.secret,
+    nextClue : state.nextClue,
+    showNextClue : state.showNextClue
   }
 }
 
