@@ -86,6 +86,7 @@ class StartModule extends React.Component {
                             autoFocus
                             type="number"
                             maxLength="1"
+                            color="secondary"
                             onChange={this.handleUserInput}
                           />
                         </Grid>
@@ -97,6 +98,7 @@ class StartModule extends React.Component {
                             id="1"
                             label="O"
                             type="number"
+                            color="secondary"
                             onChange={this.handleUserInput}
                           />
                         </Grid>
@@ -109,6 +111,7 @@ class StartModule extends React.Component {
                             label="D"
                             type="number"
                             maxLength="1"
+                            color="secondary"
                             onChange={this.handleUserInput}
                           />
                         </Grid>
@@ -120,6 +123,7 @@ class StartModule extends React.Component {
                             id="3"
                             label="E"
                             maxLength="1"
+                            color="secondary"
                             onChange={this.handleUserInput}
                           />
                         </Grid>

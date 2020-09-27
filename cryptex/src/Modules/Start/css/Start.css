@@ -15,6 +15,8 @@
 
 .App-header {
   background-color: #282c34;
+  background-repeat: repeat;
+  background-image: url("../images/mario_background.png");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +24,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+   animation: animatedBackground 30s linear infinite;
+      -moz-animation: animatedBackground 30s linear infinite;
+      -webkit-animation: animatedBackground 30s linear infinite;
+      -ms-animation: animatedBackground 30s linear infinite;
+      -o-animation: animatedBackground 30 linear infinite;
 }
 
 .App-link {
@@ -86,4 +94,32 @@ input[type=number] {
     to {
         opacity: 1;
     }
+}
+
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    50% { background-position: -600px -600px; }
+    100% { background-position: 0 0; }
+}
+@-moz-keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    50% { background-position: -600px -600px; }
+    100% { background-position: 0 0; }
+
+}
+@-webkit-keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    50% { background-position: -600px -600px; }
+    100% { background-position: 0 0; }
+}
+@-ms-keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    50% { background-position: -600px -600px; }
+    100% { background-position: 0 0; }
+}
+@-o-keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    50% { background-position: -600px -600px; }
+    100% { background-position: 0 0; }
+
 }
