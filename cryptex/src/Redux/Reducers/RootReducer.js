@@ -3,7 +3,8 @@ import { UPDATE_PIN } from "../Actions/RootActionTypes"
 const initialState = {
     userPin: Array.apply(null, Array(4)).map(function () {}),
     passPin: ["1","8","2","4"], // hard code for now. read from config key later
-    solved: false
+    solved: false,
+    secret: "Gowno. You have to guess the pin to get the secret letter."
 };
 
 function arrayEquals(a, b) {
@@ -23,10 +24,13 @@ function rootReducer(state = initialState, action) {
         const updatedPin = [...state.userPin]
         updatedPin[index] = value
 
+        const isSolved = arrayEquals(state.passPin, updatedPin)
+
         return {
             ...state,
             userPin : updatedPin,
-            solved : arrayEquals(state.passPin, updatedPin) //ugly. fix this later
+            solved : isSolved, //ugly. fix this later
+            secret : isSolved ? 'M' : "Gowno. You have to guess the pin to get the secret letter."
             }
         }
 

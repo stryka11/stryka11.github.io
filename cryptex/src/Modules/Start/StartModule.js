@@ -61,10 +61,9 @@ class StartModule extends React.Component {
                       <p>    I appreciate you </p>
                       <p>    Here is to more years ahead </p>
                       <p>    Forever and always </p>
-
                     </Typography>
 <Fade in='true' timeout={5000}  style={{display: this.props.isSolved ? 'block' : 'none' }}>
-    <h1>M</h1>
+    <h1>{this.props.secret}</h1>
 </Fade>
                     <form className={this.classes.form} noValidate>
                       <Grid container spacing={2}>
@@ -141,7 +140,8 @@ class StartModule extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    isSolved: state.solved
+    isSolved: state.solved,
+    secret: state.secret
   }
 }
 
