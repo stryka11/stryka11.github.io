@@ -13,7 +13,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Fade } from '@material-ui/core';
 import SimplePopover from './SimplePopover'
 
 class StartModule extends React.Component {
@@ -55,16 +54,22 @@ class StartModule extends React.Component {
               <header className="App-header">
                 <Container component="main" maxWidth="xs">
                   <CssBaseline />
-                  <div className={this.classes.paper}>
-                    <Typography component="p" variant="h5">
+                  <div className={this.classes.paper} >
+
+                    <Typography component="p"
+                    className={this.props.isSolved ? '' : 'fadeIn'}
+                    style={{display: this.props.isSolved ? 'none' : 'block'}}variant="h5">
                       <p>    My wonderful bae </p>
                       <p>    I appreciate you </p>
                       <p>    Here is to more years ahead </p>
                       <p>    Forever and always </p>
                     </Typography>
-<Fade in='true' timeout={5000}  style={{display: this.props.isSolved ? 'block' : 'none' }}>
-    <h1>{this.props.secret}</h1>
-</Fade>
+
+                    <div className={this.props.isSolved ? 'fadeIn' : ''}
+                         style={{display: this.props.isSolved ? 'block' : 'none'}}>
+                        <h1 >{this.props.secret}</h1>
+                    </div>
+
                     <form className={this.classes.form} noValidate>
                       <Grid container spacing={2}>
                         <Grid item xs={12} sm={3}>
@@ -131,6 +136,7 @@ class StartModule extends React.Component {
                     <SimplePopover> </SimplePopover>
                     </div>
                     </form>
+
                   </div>
                 </Container>
               </header>

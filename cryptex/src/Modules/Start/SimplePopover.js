@@ -28,7 +28,6 @@ export default function SimplePopover() {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-
   return (
     <div>
       <Button
