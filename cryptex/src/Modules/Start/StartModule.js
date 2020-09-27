@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { showNextClue, updatePin } from './StartActions'
-import logo from './images/logo.svg';
 import './css/Start.css';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import SimplePopover from './SimplePopover'
 import { NEXT_CLUE } from './StartActionTypes'
+import wiiMusic from './music/wii.mp3'
 
 
 class StartModule extends React.Component {
@@ -59,7 +59,9 @@ class StartModule extends React.Component {
                 <Container component="main" maxWidth="xs">
                   <CssBaseline />
                   <div className={this.classes.paper} >
-
+                    <audio autoPlay loop>
+                        <source src={wiiMusic} type="audio/mp3" />
+                    </audio>
                     <Typography component="p"
                     className={this.props.isSolved ? '' : 'fadeIn'}
                     style={{display: this.props.isSolved ? 'none' : 'block'}}variant="h5">
