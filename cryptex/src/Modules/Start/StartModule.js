@@ -50,9 +50,6 @@ class StartModule extends React.Component {
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(3),
       },
-      submit: {
-        margin: theme.spacing(3, 0, 2),
-      },
     }));
 
     render() {
@@ -76,7 +73,7 @@ class StartModule extends React.Component {
                          style={{display: this.props.isSolved ? 'block' : 'none'}}>
                         <h1 >{this.props.secret}</h1>
                     </div>
-
+                    <br />
                     <form className={this.classes.form} noValidate>
                       <Grid container spacing={2}>
                         <Grid item xs={12} sm={3}>
@@ -99,7 +96,6 @@ class StartModule extends React.Component {
                             fullWidth
                             id="1"
                             label="O"
-                            autoFocus
                             type="number"
                             onChange={this.handleUserInput}
                           />
@@ -111,7 +107,6 @@ class StartModule extends React.Component {
                             fullWidth
                             id="2"
                             label="D"
-                            autoFocus
                             type="number"
                             maxLength="1"
                             onChange={this.handleUserInput}
@@ -154,7 +149,7 @@ class StartModule extends React.Component {
                               rowsMax={10}
                               value={this.props.nextClue}
                               variant="filled"
-                        />
+                    />
                 </Grid>
                 </div>
                 </div>
