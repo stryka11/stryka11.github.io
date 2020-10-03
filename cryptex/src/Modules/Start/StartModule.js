@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import SimplePopover from './SimplePopover'
 import { NEXT_CLUE } from './StartActionTypes'
 import wiiMusic from './music/wii.mp3'
+import morse from './music/morse.wav'
 
 
 class StartModule extends React.Component {
@@ -157,9 +158,16 @@ class StartModule extends React.Component {
                 </div>
                 </div>
                 <br />
-                <audio autoPlay controls loop>
+                <div style={{display: this.props.isSolved ? 'none' : 'block' }}>
+                <audio autoPlay controls loop >
                     <source src={wiiMusic} type="audio/mp3" />
                 </audio>
+                </div>
+                <div style={{display: this.props.isSolved ? 'block' : 'none' }}>
+                <audio controls loop>
+                    <source src={morse} type="audio/wav" />
+                </audio>
+                </div>
                 </Container>
                 </header>
                 </div>
