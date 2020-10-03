@@ -122,6 +122,7 @@ class StartModule extends React.Component {
                             fullWidth
                             id="3"
                             label="E"
+                            type="number"
                             maxLength="1"
                             color="secondary"
                             onChange={this.handleUserInput}
